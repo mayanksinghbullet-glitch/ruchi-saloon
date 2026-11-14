@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruchi Salon | Luxury Beauty Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#090909;color:#fff;font-family:'Poppins',sans-serif}
+:root{--gold:#d6b36a;--black:#090909}
+nav{
+ position:fixed;top:0;width:100%;z-index:10;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:18px 7%;background:#090909eF;
+ border-bottom:1px solid #b99b5030;
+}
+.logo{font:600 27px 'Playfair Display';color:var(--gold)}
+.logo span{font-size:12px;display:block;letter-spacing:5px;color:white}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:white;text-decoration:none;font-size:13px}
+nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:white;font-size:26px}
+
+.hero{
+ min-height:100vh;display:flex;align-items:center;
+ padding:130px 9% 70px;
+ background:linear-gradient(90deg,#000e,#0008),
+ url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=90') center/cover;
+}
+.hero-content{max-width:650px}
+.tag{color:var(--gold);letter-spacing:5px;font-size:12px}
+h1{font:600 clamp(48px,7vw,85px)/1.15 'Playfair Display';margin:22px 0}
+h1 span{color:var(--gold)}
+.hero p{color:#ddd;line-height:1.9;max-width:500px}
+.btn{
+ display:inline-block;margin-top:30px;padding:15px 30px;
+ background:var(--gold);color:#090909;text-decoration:none;
+ font-size:12px;font-weight:600;letter-spacing:2px;
+ transition:.3s
+}
+.btn:hover{background:white;transform:translateY(-4px)}
+section{padding:100px 8%}
+.section-title{text-align:center;margin-bottom:55px}
+.section-title small{color:var(--gold);letter-spacing:4px}
+.section-title h2{font:500 45px 'Playfair Display';margin-top:12px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about img{width:100%;height:480px;object-fit:cover}
+.about h2{font:500 43px 'Playfair Display';margin:18px 0}
+.about p{color:#aaa;line-height:2;font-size:14px}
+.gold{color:var(--gold)}
+.services{background:#111}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service{
+ background:#191919;border:1px solid #ffffff12;
+ padding:35px 25px;transition:.3s
+}
+.service:hover{border-color:var(--gold);transform:translateY(-7px)}
+.service .number{color:var(--gold);font-size:13px}
+.service h3{font:25px 'Playfair Display';margin:20px 0}
+.service p{color:#999;font-size:13px;line-height:1.8}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.gallery-grid img{width:100%;height:300px;object-fit:cover;transition:.4s}
+.gallery-grid img:hover{transform:scale(1.03)}
+.offer{
+ text-align:center;
+ background:linear-gradient(#000b,#000c),
+ url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1600&q=85') center/cover;
+}
+.offer h2{font:50px 'Playfair Display';margin:20px}
+.price{font:60px 'Playfair Display';color:var(--gold)}
+.offer p{color:#ddd}
+.contact{background:#111;text-align:center}
+.contact p{color:#aaa;line-height:2}
+footer{padding:30px;text-align:center;background:#050505;color:#888;font-size:12px}
+footer span{color:var(--gold)}
+@media(max-width:750px){
+ nav ul{display:none;position:absolute;top:70px;left:0;width:100%;background:#090909;padding:25px;flex-direction:column}
+ nav ul.show{display:flex}
+ .menu{display:block}
+ .about{grid-template-columns:1fr}
+ .service-grid{grid-template-columns:1fr}
+ .gallery-grid{grid-template-columns:1fr 1fr}
+ .gallery-grid img{height:200px}
+ section{padding:75px 6%}
+ .section-title h2{font-size:35px}
+ .about img{height:350px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <div class="logo">RR<span>RUCHI SALON</span></div>
+ <button class="menu" onclick="toggleMenu()">☰</button>
+ <ul id="navlinks">
+  <li><a href="#home" onclick="toggleMenu()">HOME</a></li>
+  <li><a href="#about" onclick="toggleMenu()">ABOUT</a></li>
+  <li><a href="#services" onclick="toggleMenu()">SERVICES</a></li>
+  <li><a href="#gallery" onclick="toggleMenu()">GALLERY</a></li>
+  <li><a href="#contact" onclick="toggleMenu()">CONTACT</a></li>
+ </ul>
+</nav>
+
+<header class="hero" id="home">
+ <div class="hero-content">
+  <div class="tag">WELCOME TO RUCHI SALON</div>
+  <h1>Beauty Is An <span>Art.</span></h1>
+  <p>Discover your beauty with professional hair styling, bridal makeup and luxury beauty services. Look beautiful, feel confident.</p>
+  <a class="btn" href="#contact">BOOK YOUR APPOINTMENT</a>
+ </div>
+</header>
+
+<section id="about">
+ <div class="about">
+  <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Salon interior">
+  <div>
+   <small class="gold">ABOUT OUR STUDIO</small>
+   <h2>Welcome To <span class="gold">Ruchi Salon</span></h2>
+   <p>Ruchi Salon is your destination for beauty, elegance and professional care. We believe every person deserves to feel confident and beautiful.</p>
+   <p>Our goal is to give you a premium salon experience with care, creativity and style.</p>
+   <a href="#services" class="btn">EXPLORE SERVICES</a>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="section-title">
+  <small>WHAT WE OFFER</small>
+  <h2>Our <span class="gold">Services</span></h2>
+ </div>
+ <div class="service-grid">
+  <div class="service"><span class="number">01 / BEAUTY</span><h3>Hair Styling</h3><p>Professional haircuts, styling and beautiful hair transformations.</p></div>
+  <div class="service"><span class="number">02 / BRIDAL</span><h3>Bridal Makeup</h3><p>Elegant bridal makeup for your special and memorable occasions.</p></div>
+  <div class="service"><span class="number">03 / BEAUTY</span><h3>Facial & Skin Care</h3><p>Beauty and skincare services for a refreshing salon experience.</p></div>
+  <div class="service"><span class="number">04 / NAILS</span><h3>Nail Extensions</h3><p>Beautiful nail designs and stylish nail extension services.</p></div>
+  <div class="service"><span class="number">05 / BEAUTY</span><h3>Threading</h3><p>Professional grooming and beauty care services.</p></div>
+  <div class="service"><span class="number">06 / HAIR</span><h3>Hair Care</h3><p>Give your hair the attention and care it deserves.</p></div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="section-title">
+  <small>OUR WORK</small>
+  <h2>Beauty <span class="gold">Gallery</span></h2>
+ </div>
+ <div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Beauty styling">
+  <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85" alt="Makeup">
+  <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=85" alt="Hair styling">
+  <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=85" alt="Hair beauty">
+  <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=85" alt="Salon">
+  <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=700&q=85" alt="Beauty salon">
+ </div>
+</section>
+
+<section class="offer">
+ <small class="gold">MAKE YOUR DAY SPECIAL</small>
+ <h2>Bridal Beauty Package</h2>
+ <div class="price">₹6,999</div>
+ <p>Bridal Trial + Makeup</p>
+ <a class="btn" href="#contact">BOOK NOW</a>
+</section>
+
+<section class="contact" id="contact">
+ <div class="section-title">
+  <small>GET IN TOUCH</small>
+  <h2>Book Your <span class="gold">Visit</span></h2>
+ </div>
+ <p>RUCHI SALON | Delhi, India</p>
+ <p>Beauty • Hair • Makeup • Nail Extensions</p>
+ <a class="btn" href="https://www.instagram.com/ruchi.rajput.07/" target="_blank">FOLLOW ON INSTAGRAM</a>
+ <br>
+ <a class="btn" href="https://wa.me/91YOURNUMBER" target="_blank">WHATSAPP BOOKING</a>
+</section>
+
+<footer>
+ <p>© 2026 <span>RUCHI SALON</span> | All Rights Reserved</p>
+ <p>Designed with elegance.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+ document.getElementById('navlinks').classList.toggle('show');
+}
+</script>
+</body>
+</html>
